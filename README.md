@@ -1,2 +1,5 @@
 # Scanpath_Prediction
-Repository for Predicting Goal-directed Human Attention Using Inverse Reinforcement Learning (CVPR2020)
+Predicting Goal-directed Human Attention Using Inverse Reinforcement Learning (CVPR2020)
+
+
+**COCO-Search18** will be made available at https://saliency.tuebingen.ai/datasets/COCO-Search18/.
