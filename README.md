@@ -22,8 +22,8 @@ year = {2020}
     python test.py <hparams> <checkpoint_dir> <dataset_root> [--cuda=<id>]
     ```
     
-## COCO-Search18
-
+## Dataset
+![coco-search18](./coco_search18_logo.png)
 
 **COCO-Search18** dataset will be made available at https://saliency.tuebingen.ai/datasets/COCO-Search18/.
 
