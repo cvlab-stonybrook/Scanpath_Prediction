@@ -437,7 +437,7 @@ def save(global_step,
                 history.append(number)
         history.sort()
         while len(history) > max_checkpoints:
-            path = os.path.join(pkg_dir, _file_at_step(history[0]))
+            path = os.path.join(pkg_dir, _file_at_step(history[0], name))
             print("[Checkpoint]: remove {} to keep {} checkpoints".format(
                 path, max_checkpoints))
             if os.path.exists(path):
