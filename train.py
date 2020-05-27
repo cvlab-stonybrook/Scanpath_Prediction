@@ -38,13 +38,15 @@ if __name__ == '__main__':
 
     # load ground-truth human scanpaths
     fixation_path = join(dataset_root,
-                         'processed_human_scanpaths_TP_trainval.npy')
+                         'processed_human_scanpaths_TP.npy')
     human_scanpaths = np.load(fixation_path,
                               allow_pickle=True,
                               encoding='latin1')
+
     # exclude incorrect scanpaths
-    human_scanpaths = list(filter(lambda x: x['correct'] == 1,
-                                  human_scanpaths))
+    if hparams.Train.exclude_wrong_trials:
+        human_scanpaths = list(filter(lambda x: x['correct'] == 1,
+                                      human_scanpaths))
 
     # process fixation data
     dataset = process_data(human_scanpaths, DCB_dir_HR, DCB_dir_LR, bbox_annos,

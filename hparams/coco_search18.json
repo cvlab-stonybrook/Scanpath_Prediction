@@ -16,24 +16,23 @@
         "max_traj_length": 6
     },
     "Train": {
-        "gamma": 0.99,
+        "gamma": 1.0,
         "adv_est": "GAE",
+        "exclude_wrong_trials": false,
         "tau": 0.96,
         "batch_size": 128,
         "stop_criteria": "SOT",
         "log_root": "./assets",
-        "num_epoch": 200,
-        "num_step": 2,
-        "checkpoint_every": 200,
+        "num_epoch": 30,
+        "num_step": 4,
+        "checkpoint_every": 100,
         "max_checkpoints": 5,
         "evaluate_every": 20,
         "num_critic": 1,
         "gail_milestones": [
-            1000,
-            5000,
-            10000
+            1000
         ],
-        "gail_lr": 0.0001,
+        "gail_lr": 5e-05,
         "adam_betas": [
             0.9,
             0.999

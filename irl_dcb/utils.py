@@ -42,7 +42,7 @@ def action_to_pos(acts, patch_size, patch_num):
 
 
 def select_action(obs, policy, sample_action, action_mask=None,
-                  softmask=False):
+                  softmask=False, eps=1e-12):
     probs, values = policy(*obs)
     if sample_action:
         m = Categorical(probs)
@@ -52,8 +52,10 @@ def select_action(obs, policy, sample_action, action_mask=None,
             if softmask:
                 probs_new = probs_new * action_mask
             else:
-                probs_new[action_mask] = 0
+                probs_new[action_mask] = eps
+            
             probs_new /= probs_new.sum(dim=1).view(probs_new.size(0), 1)
+                
             m_new = Categorical(probs_new)
             actions = m_new.sample()
         else:
