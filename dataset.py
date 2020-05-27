@@ -56,7 +56,7 @@ def process_data(target_trajs,
 
         # validation fixation data
         valid_target_trajs = list(
-            filter(lambda x: x['split'] == 'test', target_trajs))
+            filter(lambda x: x['split'] == 'valid', target_trajs))
         valid_task_img_pair = np.unique(
             [traj['task'] + '_' + traj['name'] for traj in valid_target_trajs])
         human_mean_cdf, _ = compute_search_cdf(valid_target_trajs,

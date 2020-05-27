@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # load ground-truth human scanpaths
     fixation_path = join(dataset_root,
-                         'processed_human_scanpaths_TP.npy')
+                         'processed_human_scanpaths_TP_trainval.npy')
     human_scanpaths = np.load(fixation_path,
                               allow_pickle=True,
                               encoding='latin1')
