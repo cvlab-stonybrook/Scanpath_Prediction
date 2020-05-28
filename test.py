@@ -106,7 +106,7 @@ if __name__ == '__main__':
                                       input_size).to(device)
 
     generator.load_state_dict(
-        torch.load(join(checkpoint, 'trained_generator.pt'),
+        torch.load(join(checkpoint, 'trained_generator.pkg'),
                    map_location=device))
 
     generator.eval()

@@ -16,7 +16,7 @@
         "max_traj_length": 6
     },
     "Train": {
-        "gamma": 1.0,
+        "gamma": 0.9,
         "adv_est": "GAE",
         "exclude_wrong_trials": false,
         "tau": 0.96,
