@@ -1,5 +1,8 @@
 # Scanpath_Prediction
-This is the source code (based on PyTorch and Python3) of the paper: [Predicting Goal-directed Human Attention Using Inverse Reinforcement Learning](http://www3.cs.stonybrook.edu/~zhibyang/papers/scanpath-Pred_CVPR20.pdf) (CVPR2020, oral)
+
+PyTorch training/testing code and pretrained model for [Predicting Goal-directed Human Attention Using Inverse Reinforcement Learning](http://www3.cs.stonybrook.edu/~zhibyang/papers/scanpath-Pred_CVPR20.pdf) (CVPR2020, oral)
+
+We propose the first inverse reinforcement learning (IRL) model to learn the internal reward function and policy used by humans during visual search. The viewer's internal belief states were modeled as dynamic contextual belief maps of object locations. These maps were learned by IRL and then used to predict behavioral scanpaths for multiple target categories. To train and evaluate our IRL model we created COCO-Search18, which is now the largest dataset of high-quality search fixations in existence. COCO-Search18 has 10 participants searching for each of 18 target-object categories in 6202 images, making about 300,000 goal-directed fixations. When trained and evaluated on COCO-Search18, the IRL model outperformed baseline models in predicting search fixation scanpaths, both in terms of similarity to human search behavior and search efficiency.
 
 If you are using this work, please cite:
 ```bibtex
@@ -22,6 +25,35 @@ year = {2020}
     python test.py <hparams> <checkpoint_dir> <dataset_root> [--cuda=<id>]
     ```
     
+## Data Preparation
+The `<dataset_root>` should be structured as follows
+```
+<dataset_root>
+    -- coco_search_annos_512x320.npy                    # bounding box annotation for each image
+    -- processed_human_scanpaths_TP_trainval.npy        # trainval split of human scanpaths (ground-truth)
+    -- ./DCBs
+        -- ./HR                                         # high-resolution belief maps of each input image (pre-computed)
+        -- ./LR                                         # low-resolution belief maps of each input image (pre-computed)
+```
+The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths each of which is a `dict` object formated as follows
+```
+{
+    'name': '000000400966.jpg',             # image name
+     'subject': 2,                          # subject id
+     'task': 'microwave',                   # target name
+     'condition': 'present',                # target-present or target-object
+     'bbox': [67, 114, 78, 42],             # bounding box of the target object in the image
+     'X': array([245.54666667, ...]),       # x-axis of each fixation
+     'Y': array([128.03047619, ...]),       # y-axis of each fixation
+     'T': array([190,  63, 180, 543]),      # duration of each fixation
+     'length': 4,                           # length of the scanpath (i.e., number of fixations)
+     'fixOnTarget': True,                   # if the scanpath lands on the target object
+     'correct': 1,                          # 1: the subject correctly located the target; 0 otherwise
+     'split': 'train'                       # split of the image {'train', 'valid', 'test'}
+ }
+```
+A sample `<dataset_root>` folder can be found at https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc.
+
 ## Dataset
 ![coco-search18](./coco_search18_logo.png)
 
