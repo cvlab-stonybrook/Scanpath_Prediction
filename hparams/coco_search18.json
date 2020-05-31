@@ -23,7 +23,7 @@
         "batch_size": 128,
         "stop_criteria": "SOT",
         "log_root": "./assets",
-        "num_epoch": 30,
+        "num_epoch": 40,
         "num_step": 4,
         "checkpoint_every": 100,
         "max_checkpoints": 5,
@@ -41,7 +41,7 @@
     "PPO": {
         "lr": 1e-05,
         "clip_param": 0.2,
-        "num_epoch": 10,
+        "num_epoch": 1,
         "batch_size": 64,
         "value_coef": 1.0,
         "entropy_coef": 0.1
