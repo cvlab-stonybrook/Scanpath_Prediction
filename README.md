@@ -52,7 +52,7 @@ The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths eac
      'split': 'train'                       # split of the image {'train', 'valid', 'test'}
  }
 ```
-A sample `<dataset_root>` folder can be found at https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc.
+A sample `<dataset_root>` folder can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc).
 
 ## Dataset
 ![coco-search18](./coco_search18_logo.png)
