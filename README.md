@@ -54,7 +54,7 @@ The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths eac
 ```
 A sample `<dataset_root>` folder can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc).
 
-## Dataset
+## COCO-Search18 Dataset
 ![coco-search18](./coco_search18_logo.png)
 
 **COCO-Search18** dataset will be made available at https://saliency.tuebingen.ai/datasets/COCO-Search18/.
