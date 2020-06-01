@@ -48,7 +48,7 @@ The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths eac
      'T': array([190,  63, 180, 543]),      # duration of each fixation
      'length': 4,                           # length of the scanpath (i.e., number of fixations)
      'fixOnTarget': True,                   # if the scanpath lands on the target object
-     'correct': 1,                          # 1: the subject correctly located the target; 0 otherwise
+     'correct': 1,                          # 1 if the subject correctly located the target; 0 otherwise
      'split': 'train'                       # split of the image {'train', 'valid', 'test'}
  }
 ```
