@@ -41,7 +41,7 @@ The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths eac
     'name': '000000400966.jpg',             # image name
      'subject': 2,                          # subject id
      'task': 'microwave',                   # target name
-     'condition': 'present',                # target-present or target-object
+     'condition': 'present',                # target-present or target-absent
      'bbox': [67, 114, 78, 42],             # bounding box of the target object in the image
      'X': array([245.54666667, ...]),       # x-axis of each fixation
      'Y': array([128.03047619, ...]),       # y-axis of each fixation
