@@ -5,7 +5,7 @@ Usage:
 
 Options:
   -h --help     Show this screen.
-  --cuda=<id>  Speed in knots [default: 0].
+  --cuda=<id>   id of the cuda device [default: 0].
 """
 
 import torch
