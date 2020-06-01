@@ -1,4 +1,4 @@
-"""Train script.
+"""Test script.
 Usage:
   test.py <hparams> <checkpoint_dir> <dataset_root> [--cuda=<id>]
   test.py -h | --help
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     DCB_dir_LR = join(dataset_root, 'DCBs/LR/')
     data_name = '{}x{}'.format(hparams.Data.im_w, hparams.Data.im_h)
 
-    # bounding box of the target object (for scanpath ratio evaluation)
+    # bounding box of the target object (for search efficiency evaluation)
     bbox_annos = np.load(join(dataset_root,
                               'coco_search_annos_{}.npy'.format(data_name)),
                          allow_pickle=True).item()
