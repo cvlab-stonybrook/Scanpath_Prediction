@@ -26,7 +26,7 @@ year = {2020}
     ```
     
 ## Data Preparation
-The dataset consists of two parts: image stimuli and fixations. For computational efficiency, we pre-compute the low- and high-resolution belief maps using a pretrained Panoptic FPN from [Detectron2](https://github.com/facebookresearch/detectron2).
+The dataset consists of two parts: image stimuli and fixations. For computational efficiency, we pre-compute the low- and high-resolution belief maps using the pretrained Panoptic FPN (with ResNet50 backbone) from [Detectron2](https://github.com/facebookresearch/detectron2).
 For each image, we extract 134 beliefs maps for both low- and high-resolution and resize them to 20x32. Hence, for each image, we have two 134x20x32 tensors. Please refer to the [paper](https://arxiv.org/pdf/2005.14310.pdf) for more details.
 
 The typical `<dataset_root>` should be structured as follows
