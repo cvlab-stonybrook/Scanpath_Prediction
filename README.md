@@ -28,6 +28,7 @@ year = {2020}
 ## Data Preparation
 The dataset consists of two parts: image stimuli and fixations. For computational efficiency, we pre-compute the low- and high-resolution belief maps using the pretrained Panoptic FPN (with ResNet50 backbone) from [Detectron2](https://github.com/facebookresearch/detectron2).
 For each image, we extract 134 beliefs maps for both low- and high-resolution and resize them to 20x32. Hence, for each image, we have two 134x20x32 tensors. Please refer to the [paper](https://arxiv.org/pdf/2005.14310.pdf) for more details.
+Fixations come in the form of invidual scanpaths which mainly consists of a list of (x, y) locations in the image coordinate (see below for an example). Note that in the raw fixations there might be fixations out of the image boundaries, we remove them from the scanpaths.
 
 The typical `<dataset_root>` should be structured as follows
 ```
@@ -41,7 +42,7 @@ The typical `<dataset_root>` should be structured as follows
 The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths each of which is a `dict` object formated as follows
 ```
 {
-    'name': '000000400966.jpg',             # image name
+     'name': '000000400966.jpg',             # image name
      'subject': 2,                          # subject id
      'task': 'microwave',                   # target name
      'condition': 'present',                # target-present or target-absent
