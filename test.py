@@ -82,6 +82,7 @@ if __name__ == '__main__':
                               allow_pickle=True,
                               encoding='latin1')
 
+    # loading test fixation clusters (for computing sequence score)
     fix_clusters = np.load(join('./data', 'clusters.npy'),
                            allow_pickle=True).item()
 
