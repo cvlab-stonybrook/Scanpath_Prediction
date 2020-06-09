@@ -1,4 +1,4 @@
-# Scanpath_Prediction
+# Scanpath Prediction Using Inverse Reinforcement Learning
 
 PyTorch training/testing code and pretrained model for [Predicting Goal-directed Human Attention Using Inverse Reinforcement Learning](https://arxiv.org/abs/2005.14310) (CVPR2020, oral)
 
