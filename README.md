@@ -61,4 +61,4 @@ A sample `<dataset_root>` folder can be found at this [link](https://drive.googl
 ## COCO-Search18 Dataset
 ![coco-search18](./coco_search18_logo.png)
 
-**COCO-Search18** dataset is available at https://saliency.tuebingen.ai/datasets/COCO-Search18/index_new.html.
+**COCO-Search18** dataset is available at https://sites.google.com/view/cocosearch/home. COCO-Search18 is also part of the [MIT/Tuebingen Saliency Benchmark](https://saliency.tuebingen.ai/datasets/COCO-Search18/index_new.html).
