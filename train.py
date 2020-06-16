@@ -10,6 +10,7 @@ Options:
 
 import torch
 import numpy as np
+import json
 from docopt import docopt
 from os.path import join
 from irl_dcb.config import JsonConfig
@@ -37,20 +38,26 @@ if __name__ == '__main__':
                          allow_pickle=True).item()
 
     # load ground-truth human scanpaths
-    fixation_path = join(dataset_root,
-                         'processed_human_scanpaths_TP_trainval.npy')
-    human_scanpaths = np.load(fixation_path,
-                              allow_pickle=True,
-                              encoding='latin1')
+    with open(
+            join(dataset_root,
+                 'coco_search18_fixations_TP_train_split1.json')) as json_file:
+        human_scanpaths_train = json.load(json_file)
+    with open(
+            join(dataset_root,
+                 'coco_search18_fixations_TP_validation_split1.json')
+    ) as json_file:
+        human_scanpaths_valid = json.load(json_file)
 
     # exclude incorrect scanpaths
     if hparams.Train.exclude_wrong_trials:
-        human_scanpaths = list(filter(lambda x: x['correct'] == 1,
-                                      human_scanpaths))
+        human_scanpaths_train = list(
+            filter(lambda x: x['correct'] == 1, human_scanpaths_train))
+        human_scanpaths_valid = list(
+            filter(lambda x: x['correct'] == 1, human_scanpaths_valid))
 
     # process fixation data
-    dataset = process_data(human_scanpaths, DCB_dir_HR, DCB_dir_LR, bbox_annos,
-                           hparams)
+    dataset = process_data(human_scanpaths_train, human_scanpaths_valid,
+                           DCB_dir_HR, DCB_dir_LR, bbox_annos, hparams)
 
     built = build(hparams, True, device, dataset['catIds'])
     trainer = Trainer(**built, dataset=dataset, device=device, hparams=hparams)

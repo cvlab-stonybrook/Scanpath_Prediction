@@ -9,14 +9,6 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
-class MyDataParallel(torch.nn.DataParallel):
-    def __getattr__(self, name):
-        return getattr(self.module, name)
-
-
-#######################################
-#      for IRL models (new state)
-#######################################
 class RolloutStorage_New(object):
     def __init__(self, trajs_all, shuffle=True):
         self.obs_fovs = torch.cat([traj['state'] for traj in trajs_all])

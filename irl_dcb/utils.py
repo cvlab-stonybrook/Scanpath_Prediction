@@ -226,6 +226,7 @@ def process_trajs(trajs, gamma, mtd='CRITIC', tau=0.96):
 
 
 def get_num_step2target(X, Y, bbox):
+    X, Y = np.array(X), np.array(Y)
     on_target_X = np.logical_and(X > bbox[0], X < bbox[0] + bbox[2])
     on_target_Y = np.logical_and(Y > bbox[1], Y < bbox[1] + bbox[3])
     on_target = np.logical_and(on_target_X, on_target_Y)
