@@ -58,7 +58,7 @@ The `.json` file is a list of human scanpaths each of which is a `dict` object f
      'split': 'train'                       # split of the image {'train', 'valid', 'test'}
  }
 ```
-A sample `<dataset_root>` folder and the processed DCBs can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc).
+A sample `<dataset_root>` folder and the computed belief maps can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc).
 
 ## COCO-Search18 Dataset
 ![coco-search18](./coco_search18_logo.png)
