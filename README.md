@@ -33,7 +33,7 @@ Fixations come in the form of invidual scanpaths which mainly consists of a list
 The typical `<dataset_root>` should be structured as follows
 ```
 <dataset_root>
-    -- coco_search_annos_512x320.npy                        # bounding box annotation for each image (available at COCO)
+    -- bbox_annos.npy                        # bounding box annotation for each image (available at COCO)
     -- coco_search18_fixations_TP_train_split1.json         # train split of human scanpaths (ground-truth)
     -- coco_search18_fixations_TP_validation_split1.json    # validation split of human scanpaths (ground-truth)
     -- ./DCBs
