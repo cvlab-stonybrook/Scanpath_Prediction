@@ -30,22 +30,17 @@ if __name__ == '__main__':
     # dir of pre-computed beliefs
     DCB_dir_HR = join(dataset_root, 'DCBs/HR/')
     DCB_dir_LR = join(dataset_root, 'DCBs/LR/')
-    data_name = '{}x{}'.format(hparams.Data.im_w, hparams.Data.im_h)
 
     # bounding box of the target object (for search efficiency evaluation)
-    bbox_annos = np.load(join(dataset_root,
-                              'coco_search_annos_{}.npy'.format(data_name)),
+    bbox_annos = np.load(join(dataset_root, 'bbox_annos.npy'),
                          allow_pickle=True).item()
 
     # load ground-truth human scanpaths
-    with open(
-            join(dataset_root,
-                 'coco_search18_fixations_TP_train_split1.json')) as json_file:
+    with open(join(dataset_root,
+                   'coco_search18_fixations_TP_train.json')) as json_file:
         human_scanpaths_train = json.load(json_file)
-    with open(
-            join(dataset_root,
-                 'coco_search18_fixations_TP_validation_split1.json')
-    ) as json_file:
+    with open(join(dataset_root,
+                   'coco_search18_fixations_TP_validation.json')) as json_file:
         human_scanpaths_valid = json.load(json_file)
 
     # exclude incorrect scanpaths

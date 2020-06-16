@@ -334,7 +334,7 @@ def multi_hot_coding(bbox, patch_size, patch_num):
     return aoi_ratio[0]
 
 
-def actions2scanpaths(actions, patch_num):
+def actions2scanpaths(actions, patch_num, im_w, im_h):
     # convert actions to scanpaths
     scanpaths = []
     for traj in actions:
@@ -347,8 +347,8 @@ def actions2scanpaths(actions, patch_num):
                                fixs.cpu().numpy()],
                               axis=1)
         scanpaths.append({
-            'X': fixs[0] * 512,
-            'Y': fixs[1] * 320,
+            'X': fixs[0] * im_w,
+            'Y': fixs[1] * im_h,
             'name': img_name,
             'task': task_name,
             'condition': condition
@@ -365,7 +365,8 @@ def preprocess_fixations(trajs,
                          need_label=True):
     fix_labels = []
     for traj in trajs:
-        traj['X'][0], traj['Y'][0] = 256, 160
+        # first fixations are fixed at the screen center
+        traj['X'][0], traj['Y'][0] = im_w / 2, im_h / 2
         label = pos_to_action(traj['X'][0], traj['Y'][0], patch_size,
                               patch_num)
         tar_x, tar_y = action_to_pos(label, patch_size, patch_num)

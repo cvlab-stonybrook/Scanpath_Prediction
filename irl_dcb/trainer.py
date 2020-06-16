@@ -64,6 +64,8 @@ class Trainer(object):
         self.n_steps = hparams.Train.num_step
         self.n_critic = hparams.Train.num_critic
         self.patch_num = hparams.Data.patch_num
+        self.im_w = hparams.Data.im_w
+        self.im_h = hparams.Data.im_h
         self.eval_every = hparams.Train.evaluate_every
         self.ppo = PPO(self.generator, hparams.PPO.lr,
                        hparams.Train.adam_betas, hparams.PPO.clip_param,
@@ -140,7 +142,7 @@ class Trainer(object):
                                     for i in range(self.env_valid.batch_size)
                                 ])
                     scanpaths = utils.actions2scanpaths(
-                        all_actions, self.patch_num)
+                        all_actions, self.patch_num, self.im_w, self.im_h)
                     utils.cutFixOnTarget(scanpaths, self.bbox_annos)
 
                     # search effiency
