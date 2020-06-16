@@ -54,11 +54,10 @@ The `.json` file is a list of human scanpaths each of which is a `dict` object f
      'length': 4,                           # length of the scanpath (i.e., number of fixations)
      'fixOnTarget': True,                   # if the scanpath lands on the target object
      'correct': 1,                          # 1 if the subject correctly located the target; 0 otherwise
-     'RT':                                  # search reaction time,
      'split': 'train'                       # split of the image {'train', 'valid', 'test'}
  }
 ```
-A sample `<dataset_root>` folder and the computed belief maps can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc).
+A sample `<dataset_root>` folder used and the computed belief maps in this paper can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc). Note that in this paper we resaled the images to 512x320 as well as the fixation locations. The original COCO-Search18 dataset was collected on a 1680x1050 display.
 
 ## COCO-Search18 Dataset
 ![coco-search18](./coco_search18_logo.png)
