@@ -40,7 +40,7 @@ The typical `<dataset_root>` should be structured as follows
         -- ./HR                                             # high-resolution belief maps of each input image (pre-computed)
         -- ./LR                                             # low-resolution belief maps of each input image (pre-computed)
 ```
-The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths each of which is a `dict` object formated as follows
+The `.json` file is a list of human scanpaths each of which is a `dict` object formated as follows
 ```
 {
      'name': '000000400966.jpg',            # image name
