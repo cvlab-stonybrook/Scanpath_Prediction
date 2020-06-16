@@ -33,11 +33,12 @@ Fixations come in the form of invidual scanpaths which mainly consists of a list
 The typical `<dataset_root>` should be structured as follows
 ```
 <dataset_root>
-    -- coco_search_annos_512x320.npy                    # bounding box annotation for each image (available at COCO)
-    -- processed_human_scanpaths_TP_trainval.npy        # trainval split of human scanpaths (ground-truth)
+    -- coco_search_annos_512x320.npy                        # bounding box annotation for each image (available at COCO)
+    -- coco_search18_fixations_TP_train_split1.json         # train split of human scanpaths (ground-truth)
+    -- coco_search18_fixations_TP_validation_split1.json    # validation split of human scanpaths (ground-truth)
     -- ./DCBs
-        -- ./HR                                         # high-resolution belief maps of each input image (pre-computed)
-        -- ./LR                                         # low-resolution belief maps of each input image (pre-computed)
+        -- ./HR                                             # high-resolution belief maps of each input image (pre-computed)
+        -- ./LR                                             # low-resolution belief maps of each input image (pre-computed)
 ```
 The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths each of which is a `dict` object formated as follows
 ```
@@ -53,6 +54,7 @@ The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths eac
      'length': 4,                           # length of the scanpath (i.e., number of fixations)
      'fixOnTarget': True,                   # if the scanpath lands on the target object
      'correct': 1,                          # 1 if the subject correctly located the target; 0 otherwise
+     'RT':                                  # search reaction time,
      'split': 'train'                       # split of the image {'train', 'valid', 'test'}
  }
 ```
