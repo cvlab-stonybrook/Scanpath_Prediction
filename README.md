@@ -42,9 +42,9 @@ The typical `<dataset_root>` should be structured as follows
 The `processed_human_scanpaths_TP_trainval.npy` is a list of human scanpaths each of which is a `dict` object formated as follows
 ```
 {
-     'name': '000000400966.jpg',             # image name
-     'subject': 2,                          # subject id
-     'task': 'microwave',                   # target name
+     'name': '000000400966.jpg',            # image name
+     'subject': 2,                          # subject id (10 subjects from 1~10 in total)
+     'task': 'microwave',                   # target name (18 target categories in total)
      'condition': 'present',                # target-present or target-absent
      'bbox': [67, 114, 78, 42],             # bounding box of the target object in the image
      'X': array([245.54666667, ...]),       # x-axis of each fixation
