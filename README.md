@@ -20,8 +20,8 @@ year = {2020}
     ```
     python train.py <hparams> <dataset_root> [--cuda=<id>]
     ```
-- Model evaluationn
-    We are working to set up a evaluation server with [MIT/Tuebingen Saliency Benchmark](https://saliency.tuebingen.ai/datasets/COCO-Search18/index_new.html), stay tuned!
+- Model evaluation
+    - We are working to set up a evaluation server with [MIT/Tuebingen Saliency Benchmark](https://saliency.tuebingen.ai/datasets/COCO-Search18/index_new.html), stay tuned!
     
 ## Data Preparation
 The dataset consists of two parts: image stimuli and fixations. For computational efficiency, we pre-compute the low- and high-resolution belief maps using the pretrained Panoptic FPN (with ResNet50 backbone) from [Detectron2](https://github.com/facebookresearch/detectron2).
