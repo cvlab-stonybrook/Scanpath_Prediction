@@ -23,14 +23,14 @@
         "batch_size": 128,
         "stop_criteria": "SOT",
         "log_root": "./assets",
-        "num_epoch": 40,
+        "num_epoch": 30,
         "num_step": 4,
         "checkpoint_every": 100,
         "max_checkpoints": 5,
         "evaluate_every": 20,
         "num_critic": 1,
         "gail_milestones": [
-            1000
+            10000
         ],
         "gail_lr": 5e-05,
         "adam_betas": [
@@ -44,6 +44,6 @@
         "num_epoch": 1,
         "batch_size": 64,
         "value_coef": 1.0,
-        "entropy_coef": 0.1
+        "entropy_coef": 0.01
     }
 }
