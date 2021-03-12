@@ -139,6 +139,8 @@ class IRL_Env4LHF:
 
         self.action_mask = self.init_action_mask.clone()
 
+        self.history_map = self.init_history_map.clone()
+        
         # random initialization
         if self.init == 'random':
             raise NotImplementedError
@@ -170,7 +172,7 @@ class IRL_Env4LHF:
         self.cat_names = data['cat_name']
         self.init_fix = data['init_fix'].to(self.device)
         self.init_action_mask = data['action_mask'].to(self.device)
-        self.history_map = data['history_map'].to(self.device)
+        self.init_history_map = data['history_map'].to(self.device)
         self.task_ids = data['task_id'].to(self.device)
         self.lr_feats = data['lr_feats'].to(self.device)
         self.hr_feats = data['hr_feats'].to(self.device)
