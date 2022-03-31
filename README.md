@@ -55,7 +55,7 @@ The `.json` file is a list of human scanpaths each of which is a `dict` object f
      'split': 'train'                       # split of the image {'train', 'valid', 'test'}
  }
 ```
-A sample `<dataset_root>` folder used and the computed belief maps in this paper can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc). Note that in this paper we resaled the images to 512x320 as well as the fixation locations. The original COCO-Search18 dataset was collected on a 1680x1050 display.
+**Note that in this paper we rescaled the images to 512x320 as well as the fixation locations. The original COCO-Search18 dataset was collected on a 1680x1050 display.** The computed belief maps and rescaled fixations used in this paper can be found at this [link](https://drive.google.com/open?id=1spD2_Eya5S5zOBO3NKILlAjMEC3_gKWc).  
 
 ## COCO-Search18 Dataset
 ![coco-search18](./coco_search18_logo.png)
