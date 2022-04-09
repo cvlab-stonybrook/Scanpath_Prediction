@@ -1,0 +1,9 @@
+torch
+tqdm
+tensorboard
+torchvision
+numpy
+scipy
+pillow
+docopt
+scikit-image
