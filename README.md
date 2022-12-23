@@ -20,9 +20,12 @@ year = {2020}
     ```
     python train.py <hparams> <dataset_root> [--cuda=<id>]
     ```
-- Model evaluation
-    - We are working with [MIT/Tuebingen Saliency Benchmark](https://saliency.tuebingen.ai/datasets/COCO-Search18/index_new.html) to set up an evaluation server, stay tuned!
-    
+- Plot a scanpath
+    ```
+    python plot_scanpath.py --fixation_path <fixation_file_path> --image_dir <image_dir>
+    ```
+For model evaluation, please refer to this [thread](https://github.com/cvlab-stonybrook/Scanpath_Prediction/issues/12).
+
 ## Data Preparation
 The dataset consists of two parts: image stimuli and fixations. For computational efficiency, we pre-compute the low- and high-resolution belief maps using the pretrained Panoptic FPN (with ResNet50 backbone) from [Detectron2](https://github.com/facebookresearch/detectron2).
 For each image, we extract 134 beliefs maps for both low- and high-resolution and resize them to 20x32. Hence, for each image, we have two 134x20x32 tensors. Please refer to the [paper](https://arxiv.org/pdf/2005.14310.pdf) for more details.
@@ -60,4 +63,4 @@ The `.json` file is a list of human scanpaths each of which is a `dict` object f
 ## COCO-Search18 Dataset
 ![coco-search18](./coco_search18_logo.png)
 
-**COCO-Search18** dataset (inlcuding the testing set) is available at https://sites.google.com/view/cocosearch/home. COCO-Search18 is also part of the [MIT/Tuebingen Saliency Benchmark](https://saliency.tuebingen.ai/datasets/COCO-Search18/index_new.html).
+**COCO-Search18** dataset (inlcuding the testing set) is available at https://sites.google.com/view/cocosearch/home.
